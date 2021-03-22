@@ -14,29 +14,6 @@ import argparse
 #=========== Only use one parser ===========#
 
 #----------- Arguments für Tiny -----------#
-def parser():
-    parser = argparse.ArgumentParser(description="YOLO Object Detection")
-    parser.add_argument("--input", type=str, default="./Zoo_Test_Video.mp4",
-                        help="video source. If empty, uses webcam 0 stream")
-    parser.add_argument("--out_filename", type=str, default="",
-                        help="inference video name. Not saved if empty")
-    parser.add_argument("--weights", default="./backup/yolov4-tiny-zoo_4000.weights",
-                        help="yolo weights path")
-    parser.add_argument("--dont_show", action='store_true',
-                        help="windown inference display. For headless systems")
-    parser.add_argument("--ext_output", action='store_true',
-                        help="display bbox coordinates of detected objects")
-    parser.add_argument("--config_file", default="./cfg/yolov4-tiny-zoo.cfg",
-                        help="path to config file")
-    parser.add_argument("--data_file", default="./data/zoo.data",
-                        help="path to data file")
-    parser.add_argument("--thresh", type=float, default=.25,
-                        help="remove detections with confidence below this value")
-    parser.add_argument("--max_distance", type=int, default=200,
-                        help="maximum pixel distance at what close proximity is indicated")
-    return parser.parse_args()
-
-#----------- Arguments für Fullsize -----------#
 
 # def parser():
 #     parser = argparse.ArgumentParser(description="YOLO Object Detection")
@@ -44,21 +21,45 @@ def parser():
 #                         help="video source. If empty, uses webcam 0 stream")
 #     parser.add_argument("--out_filename", type=str, default="",
 #                         help="inference video name. Not saved if empty")
-#     parser.add_argument("--weights", default="./backup/yolo-zoo_7000.weights",
+#     parser.add_argument("--weights", default="./backup/yolov4-tiny-zoo_4000.weights",
 #                         help="yolo weights path")
 #     parser.add_argument("--dont_show", action='store_true',
 #                         help="windown inference display. For headless systems")
 #     parser.add_argument("--ext_output", action='store_true',
 #                         help="display bbox coordinates of detected objects")
-#     parser.add_argument("--config_file", default="./cfg/yolo-zoo.cfg",
+#     parser.add_argument("--config_file", default="./cfg/yolov4-tiny-zoo.cfg",
 #                         help="path to config file")
 #     parser.add_argument("--data_file", default="./data/zoo.data",
 #                         help="path to data file")
 #     parser.add_argument("--thresh", type=float, default=.25,
 #                         help="remove detections with confidence below this value")
-#     parser.add_argument("--max_distance", type=int, default=100,
+#     parser.add_argument("--max_distance", type=int, default=200,
 #                         help="maximum pixel distance at what close proximity is indicated")
 #     return parser.parse_args()
+
+#----------- Arguments für Fullsize -----------#
+
+def parser():
+    parser = argparse.ArgumentParser(description="YOLO Object Detection")
+    parser.add_argument("--input", type=str, default="./Zoo_Test_Video.mp4",
+                        help="video source. If empty, uses webcam 0 stream")
+    parser.add_argument("--out_filename", type=str, default="",
+                        help="inference video name. Not saved if empty")
+    parser.add_argument("--weights", default="./backup/yolo-zoo_7000.weights",
+                        help="yolo weights path")
+    parser.add_argument("--dont_show", action='store_true',
+                        help="windown inference display. For headless systems")
+    parser.add_argument("--ext_output", action='store_true',
+                        help="display bbox coordinates of detected objects")
+    parser.add_argument("--config_file", default="./cfg/yolo-zoo.cfg",
+                        help="path to config file")
+    parser.add_argument("--data_file", default="./data/zoo.data",
+                        help="path to data file")
+    parser.add_argument("--thresh", type=float, default=.25,
+                        help="remove detections with confidence below this value")
+    parser.add_argument("--max_distance", type=int, default=100,
+                        help="maximum pixel distance at what close proximity is indicated")
+    return parser.parse_args()
 
 
 def str2int(video_path):
