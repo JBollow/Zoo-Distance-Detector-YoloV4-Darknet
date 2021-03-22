@@ -3,6 +3,7 @@ A custom detection tool to identify maras and anteater in the muenster zoo using
 
 ## Downloads
 Additional testing fotos and videos including a full weight file can be downloaded here: https://1drv.ms/u/s!Au1UAvkWbNnQzrNgiE4gudw_1g6FBg?e=IABKJe
+
 A precompiled Window x64 Darknet Version for Cuda 11.2 with CDNN and OpenCV 4.5.1 can be downloaded here: https://1drv.ms/u/s!Au1UAvkWbNnQzrMt0JUrSnrfj4i1ZA?e=SWGx0j
 
 
